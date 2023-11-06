@@ -20,26 +20,28 @@ function render(variables = {}) {
           ${variables.city == null ? "City" : variables.city},
           ${variables.country == null ? "Country" : variables.country}
           </h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/${
-              variables.twitter == null ? "4geeksacademy" : variables.twitter
-            }"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/${
-              variables.github == "alesanchezr"
-                ? "4geeksacademy"
-                : variables.github
-            }"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/${
-              variables.linkedin == null
-                ? "school/4geeks-academy-vzla"
-                : "in/" + variables.linkedin
-            }"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/${
-              variables.instagram == null
-                ? "4geeksacademy"
-                : variables.instagram
-            }"><i class="fab fa-instagram"></i></a></li>
-           </ul>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="${
+              variables.twitter != null
+                ? "https://twitter.com/" + variables.twitter
+                : "https://twitter.com/4GeeksAcademy"
+            }"target=_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="${
+              variables.github != null
+                ? "https://github.com/" + variables.github
+                : "https://github.com/4GeeksAcademy"
+            }"target=_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="${
+              variables.linkedin != null
+                ? "https://linkedin.com/in/" + variables.linkedin
+                : "https://linkedin.com/school/4GeeksAcademy"
+            }"target=_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="${
+              variables.instagram != null
+                ? "https://instagram.com/" + variables.instagram
+                : "https://instagram.com/4GeeksAcademy"
+            }"target=_blank"><i class="fab fa-instagram"></i></a></li>
+          </ul>
         </div>
     `;
 }
